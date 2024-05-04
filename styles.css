@@ -1,42 +1,51 @@
-input[value="Adição"] {
-  background-color: #4CAF50; /* Verde */
-  color: white;
-}
-
-input[value="Subtração"] {
-  background-color: #f44336; /* Vermelho */
-  color: white;
-}
-
-input[value="Multiplicação"] {
-  background-color: #2196F3; /* Azul */
-  color: white;
-}
-
-input[value="Divisão"] {
-  background-color: #FF9800; /* Laranja */
-  color: white;
-}
-
-input[value="Fatorial"] {
-  background-color: #9C27B0; /* Roxo */
-  color: white;
-}
-
-input[value="Exponenciação"] {
-  background-color: #FFEB3B; /* Amarelo */
-  color: black;
-}
-
-input[value="Raiz Quadrada"] {
-  background-color: #795548; /* Marrom */
-  color: white;
-}
-
 body {
   text-align: center;
   margin: 0;
   padding: 0;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  font-family: Arial, sans-serif; 
+  text-transform: uppercase; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  font-size: 26px; 
+  font-weight: bold; 
+  color: #333; 
+}
+
+input[value="Adição"] {
+  background-color: #4CAF50; 
+  color: white;
+}
+
+input[value="Subtração"] {
+  background-color: #f44336; 
+  color: white;
+}
+
+input[value="Multiplicação"] {
+  background-color: #2196F3; 
+  color: white;
+}
+
+input[value="Divisão"] {
+  background-color: #FF9800; 
+  color: white;
+}
+
+input[value="Fatorial"] {
+  background-color: #9C27B0; 
+}
+
+input[value="Exponenciação"] {
+  background-color: #FFEB3B; 
+  color: black;
+}
+
+input[value="Raiz Quadrada"] {
+  background-color: #795548; 
+  color: white;
 }
 
 footer {
@@ -44,7 +53,6 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: #d8d8d8;
   padding: 10px;
 }
-

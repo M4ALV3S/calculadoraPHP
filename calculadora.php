@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="pr-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="styles.css"/>
-  <title>Calculadora PHP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Calculadora PHP</title>
 </head>
+
 <body>
 
-  <h1>Calculadora PHP</h1>
+    <h1>Calculadora PHP</h1>
 
-  <form action="calculadora.php" method="post">
+    <form action="calculadora.php" method="post">
 
-    <label for="Primeiro número">Número 1:</label>       
-    <input type="text" id="numero1" name="numero1" placeholder="Digite o primeiro número" onkeyup="somenteNumeros(this)">
-    <br>
-    <label for="Segundo número">Número 2:</label>       
-    <input type="text" id="numero2" name="numero2" placeholder="Digite o segundo número" onkeyup="somenteNumeros(this)">
-    <br><br>
-    <label for="Escolha">Escolha a operação:</label>
-    <input type="submit" name="operacoes" value="Adição">
-    <input type="submit" name="operacoes" value="Subtração">
-    <input type="submit" name="operacoes" value="Multiplicação">
-    <input type="submit" name="operacoes" value="Divisão">
-    <input type="submit" name="operacoes" value="Fatorial">
-    <input type="submit" name="operacoes" value="Exponenciação">
-    <input type="submit" name="operacoes" value="Raiz Quadrada">
-    <br>  
+        <label for="Primeiro número">Número 1:</label>
+        <input type="text" id="numero1" name="numero1" placeholder="Digite o primeiro número"
+            onkeyup="somenteNumeros(this)">
+        <br>
+        <label for="Segundo número">Número 2:</label>
+        <input type="text" id="numero2" name="numero2" placeholder="Digite o segundo número"
+            onkeyup="somenteNumeros(this)">
+        <br><br>
+        <label for="Escolha">Escolha a operação:</label>
+        <input type="submit" name="operacoes" value="Adição">
+        <input type="submit" name="operacoes" value="Subtração">
+        <input type="submit" name="operacoes" value="Multiplicação">
+        <input type="submit" name="operacoes" value="Divisão">
+        <input type="submit" name="operacoes" value="Fatorial">
+        <input type="submit" name="operacoes" value="Exponenciação">
+        <input type="submit" name="operacoes" value="Raiz Quadrada">
+        <br>
 
-  </form>
+    </form>
 
-  <script>
+    <script>
     function somenteNumeros(valor) {
-      var campoAlterado = valor.value;
-      campoAlterado = campoAlterado.replace(/\D/g, ""); 
-      valor.value = campoAlterado;
+        var campoAlterado = valor.value;
+        campoAlterado = campoAlterado.replace(/\D/g, "");
+        valor.value = campoAlterado;
     }
-  </script>
-  
-  <?php
+    </script>
+
+    <?php
   $numero1;
   $numero2;
   $operacoes;
@@ -55,7 +59,7 @@
           echo "Ambos os campos precisam ser preenchidos, tente novamente!";
         } else {
           $resultado = $numero1 + $numero2;
-          echo "O resultado é :" . number_format($resultado, 2);
+          echo "O resultado da Adição é : " . number_format($resultado, 2);
         }
         break;
 
@@ -64,7 +68,7 @@
           echo "Ambos os campos precisam ser preenchidos, tente novamente!";
         } else {
           $resultado = $numero1 - $numero2;
-          echo "O resultado é :" . number_format($resultado, 2);
+          echo "O resultado da Subtração é : " . number_format($resultado, 2);
         }
         break;
 
@@ -73,20 +77,21 @@
           echo "Ambos os campos precisam ser preenchidos, tente novamente!";
         } else {
           $resultado = $numero1 * $numero2;
-          echo "O resultado é :" . number_format($resultado, 2);
+          echo "O resultado da Multiplicação é : " . number_format($resultado, 2);
         }
         break;
-        
-        case "Divisão":
-          if (!isset($numero1) || !isset($numero2)) {
-              echo "Ambos os campos precisam ser preenchidos, tente novamente!";
-          } if ($numero1 == 0 || $numero2 == 0) {
-              echo "Não é possível dividir um número por zero, tente novamente.";
-          } else {
-               $resultado = $numero1 / $numero2;
-              echo "O resultado é : " . number_format($resultado, 2);
-          }
-          break;
+
+      case "Divisão":
+        if (!isset($numero1) || !isset($numero2)) {
+          echo "Ambos os campos precisam ser preenchidos, tente novamente!";
+        }
+        if ($numero1 == 0 || $numero2 == 0) {
+          echo "Não é possível dividir um número por zero, tente novamente.";
+        } else {
+          $resultado = $numero1 / $numero2;
+          echo "O resultado da Divisão é : " . number_format($resultado, 2);
+        }
+        break;
 
       case "Fatorial":
         if (empty($numero1) || empty($numero2)) {
@@ -98,7 +103,7 @@
             $fatorial *= $i;
           }
           $resultado = $fatorial;
-          echo "O resultado é :" . number_format($resultado, 2);
+          echo "O resultado da Fatoração é : " . number_format($resultado, 2);
         }
         break;
 
@@ -107,7 +112,7 @@
           echo "Ambos os campos precisam ser preenchidos, tente novamente!";
         } else {
           $resultado = $numero1 ** $numero2;
-          echo "O resultado é :" . number_format($resultado, 2);
+          echo "O resultado da Exponenciação é : " . number_format($resultado, 2);
         }
         break;
 
@@ -116,8 +121,8 @@
           echo "Ambos os campos precisam ser preenchidos, tente novamente!";
         } else {
           $soma = $numero1 + $numero2;
-          $resultado = $soma ** (1/2);
-          echo "O resultado é :" . number_format($resultado, 2);
+          $resultado = $soma ** (1 / 2);
+          echo "O resultado da Raiz Quadrada é : " . number_format($resultado, 2);
         }
         break;
 
@@ -128,8 +133,9 @@
   }
   ?>
 
-  <footer>
-    <p>&copy; 2024 M4ALV3S</p>
-  </footer>
+    <footer>
+        <p>&copy; 2024 M4ALV3S</p>
+    </footer>
 </body>
+
 </html>
